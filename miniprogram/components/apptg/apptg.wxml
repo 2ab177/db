@@ -1,0 +1,12 @@
+<view class="dbapp_tg fixed">
+  <view>
+    <image src="https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/logo.png?sign=59c49902bfd848bc8866200467f82798&t=1571280471"></image>
+    <view>
+      <text>猫眼</text>
+      <text>0元看电影,天天领现金</text>
+    </view>
+  </view>
+  <view>
+    <text>打开App</text>
+  </view>
+</view>

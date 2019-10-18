@@ -1,0 +1,90 @@
+
+/* 我喜欢的电影列表 */
+.mymovie_item{
+  display: flex;
+  padding: .8rem;
+}
+.mymovie_item>view:last-child{
+  display: flex;
+  align-items: center;
+}
+.mymovie_item>view:last-child>text{
+  padding: .4rem .8rem;
+  background: #ed2317;
+  color: #fff;
+  border-radius: 5px;
+  
+}
+.mymovie_item>view:nth-child(2)>text:first-child{
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+.mymovie_item>view:nth-child(2){
+  font-size: .9rem;
+  line-height: 1.5rem;
+}
+.mymovie_item>view:nth-child(2){
+  display:flex;
+  flex-direction: column;
+  flex: 1;
+  text-align: left;
+}
+.mymovie_item>image{
+  width: 69px;
+  height: 95px;
+  border-radius: 5px;
+  margin-right: .8rem;
+}
+/* 上方导航条 */
+.active{
+  color: #ed2317;
+  border-bottom: 2px solid #ed2317;
+  margin-bottom: -1px;
+}
+.top_nav>view:last-child>text{
+  padding: .8rem .5rem;
+  font-weight: bold;
+}
+.top_nav>view:last-child{
+  flex: 1;
+  justify-content: space-around;
+  display: flex;
+}
+.top_nav>view:first-child{
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 70px;
+  padding-left: 1.2rem;
+}
+.top_nav{
+  border-bottom: 1px solid #eee;
+  display: flex;
+}
+.sanjiao{
+  border-top: 4px solid #b0b0b0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  position: absolute;
+  top: 50%;
+  left: 55px;
+}
+/* 上部 */
+.container>.top{
+  background: #ed2317;
+  text-align: center;
+  color: #fff;
+  padding: .8rem 0;
+}
+/* 容器 */
+.container>view{
+  width: 100%;
+  text-align: center;
+}
+.container{
+  padding-top: 59px;
+  width: 100%;
+  background: #fff;
+  color: #818181;
+}

@@ -1,0 +1,43 @@
+<apptg/>
+<van-dialog id="van-dialog" />
+<view class="container">
+  <view class="top">
+    <text>我的</text>
+  </view>
+  <view class="middle">
+    <view>
+      <image src="{{logined?userData.avatarUrl:'https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/auser.png?sign=bb0506f6a408c4736e43482eb7524ffe&t=1571300519'}}"></image>
+      <text wx:if="{{logined}}" >{{userData.nickName}}</text>
+      <button wx:else open-type="getUserInfo"
+  bindgetuserinfo="getUser">点击授权</button>
+    </view>
+  </view>
+  <view class="myorder">
+    <text>我的订单</text>
+    <view class="line"></view>
+    <view class="order_list">
+      <view class="order_item">
+        <image src="https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/mymovie.png?sign=ea804d00f9394ada9c1c08d6382fbb58&t=1571303081"></image>
+        <text>电影</text>
+      </view>
+      <view class="order_item">
+        <image src="https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/mycart.png?sign=31e56009897eb9a4b4a21073ba36f642&t=1571303103"></image>
+        <text>商城</text>
+      </view>
+    </view>
+  </view>
+  <view class="bottom">
+    <view>
+      <text>在线观影</text>
+      <image src="https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/arrow.png?sign=b60a1b19b43bdc0d9a24120d25457c0c&t=1570757534"></image>
+    </view>
+    <view>
+      <text>优惠券</text>
+      <image src="https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/arrow.png?sign=b60a1b19b43bdc0d9a24120d25457c0c&t=1570757534"></image>
+    </view>
+    <view bindtap="loginout">
+      <text>退出登录</text>
+      <image src="https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/arrow.png?sign=b60a1b19b43bdc0d9a24120d25457c0c&t=1570757534"></image>
+    </view>
+  </view>
+</view>

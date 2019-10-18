@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/wantw/wantw",
+    "pages/user/user",
+    "pages/index01/index01",
+    "pages/detail/detail",
+    "pages/play/play"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "热门电影",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#8a8a8a",
+    "selectedColor": "#2c2c2c",
+    "list": [
+      {
+        "pagePath": "pages/index01/index01",
+        "text": "电影",
+        "iconPath": "images/m.png",
+        "selectedIconPath": "images/movative.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "个人中心",
+        "iconPath": "images/u.png",
+        "selectedIconPath": "images/uative.png"
+      },
+      {
+        "pagePath": "pages/wantw/wantw",
+        "text": "喜欢",
+        "iconPath": "images/h.png",
+        "selectedIconPath": "images/hactive.png"
+      }
+    ]
+  },
+  "usingComponents": {
+    "apptg": "components/apptg/apptg"
+  }
+}

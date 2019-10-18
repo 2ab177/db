@@ -1,0 +1,31 @@
+<apptg/>
+<view class="container">
+  <view class="top">
+    <text>我想看的</text>
+  </view>
+  <view class="top_nav">
+    <view>
+      <text>厦门</text>
+      <text class="sanjiao"></text>
+    </view>
+    <view>
+      <text class="active">正在热映</text>
+      <text>即将上映</text>
+    </view>
+  </view>
+  <view class="mymovie_list">
+    <view class="mymovie_item">
+    <image src="https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/p2567998580.jpg?sign=76a8ee460f79d9cedd675490d5842bf8&t=1571379726"></image>
+    <view>
+      <text>双子杀手</text>
+      <view>
+        <van-rate value="{{5}}" size="{{15}}" allow-half gutter="{{0}}" color="#ffac2d" />
+        <text>10.0</text>
+      </view>
+      <text>主演:降低奥萨激动撒撒娇</text>
+      <text>上映日期</text>
+    </view>
+    <view><text>购票</text></view>
+  </view>
+  </view>
+</view>

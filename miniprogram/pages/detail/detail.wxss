@@ -1,0 +1,344 @@
+/* 影评 */
+.yp_reviews>text:last-child{
+  font-size: .8rem;
+}
+.yp_reviews .content{
+  margin-bottom: .5rem;
+  color: #333;
+}
+.yp_reviews .title{
+  font-size: 1rem;
+  color: #333;
+  margin-top: .2rem;
+  margin-bottom: .5rem;
+  width: 600rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.yp_reviews .top>text{
+  margin: 0 .2rem;
+}
+.yp_reviews>view:first-child{
+  display: flex;
+}
+.yp_reviews image{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+.yp_reviews{
+  display: flex;
+  flex-direction: column;
+  padding-top: .8rem;
+  padding-bottom: .8rem;
+  border-bottom:1px solid #eee;
+}
+/* 短评 */
+.short_reviewsitem .detail{
+  color: #333;
+}
+.short_reviewsitem .top>text:last-child{
+  margin-left: .2rem;
+}
+.short_reviewsitem .top>text:first-child{
+  color: #333;
+  margin-right: .2rem;
+}
+.dianzan>view:first-child{
+  display: flex;
+  align-items: center;
+}
+.short_reviewsitem .top{
+  margin-bottom: .5rem;
+  font-size: .7rem;
+}
+.dianzan text{
+  font-size: .8rem;
+}
+.dianzan{
+  margin: .5rem 0 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sdian{
+  height: 4px !important;
+}
+.short_reviewsitem>view{
+  flex: 1;
+  margin-left: .6rem;
+  border-bottom: 1px solid #eee;
+}
+.short_reviewsitem{
+  margin-top: 1rem;
+  display: flex;
+}
+.short_reviewsitem>image{
+  border-radius: 50%;
+}
+.short_reviewsitem image{
+  width: 20px;
+  height: 20px;
+}
+.dpin>view:first-child,.ypin>view:first-child{
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+.dpin,.ypin{
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: .8rem;
+  background: #fff;
+  padding: .8rem;
+  color: #818181;
+  font-size: .9rem;
+}
+/* 标题 */
+.sm_title{
+  font-size: .6rem;
+  margin: .4rem 0 .8rem 0;
+  color: rgba(255,255,255,0.7);
+}
+.la_title{
+  font-size: 1.5rem;
+  margin: .3rem 0;
+}
+/* 底部内容 */
+/* 剧照 */
+.ygp{
+  position: relative;
+}
+.toplay{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 68rpx !important;
+  height: 68rpx !important;
+}
+.jz>view:first-child>text:nth-child(2){
+  color: #42bd56;
+}
+.jz>view:first-child>text:first-child{
+  color: #818181;
+}
+.jz>view:nth-child(2)>view+view{
+  margin-left: .3rem;
+}
+.jz>view:nth-child(2) image{
+  width: 372rpx;
+  height: 200rpx;
+  border-radius: 5px;
+}
+.jz>view:nth-child(2){
+  margin-top: 1rem;
+  display: flex;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.jz>view:first-child{
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 演职员 */
+
+.autor{
+  margin-top: 1rem;
+  display: flex;
+  overflow-x: scroll;
+}
+.autor_item+.autor_item{
+  margin-left: .6rem;
+}
+.autor_item>text{
+  margin-top: .2rem;
+  font-size: .7rem;
+}
+.autor_item>text:nth-child(2){
+  text-align: center;
+  width: 124rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.autor_item>text:last-child{
+  color: #818181;
+}
+.autor_item>image{
+  width: 140rpx;
+  height: 200rpx;
+  border-radius: 5px;
+}
+.autor_item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* 剧情简介 */
+.jqjj>view>text{
+  color: #000;
+}
+.jqjj>view{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: #42bd56;
+  background: #fff;
+  padding-left: 3px;
+}
+.jqjj>text:nth-child(2){
+  display: block;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+    word-wrap: break-word;
+    
+}
+.jqjj>text:first-child,.yzy>text:first-child{
+  margin: 1.5rem 0 1rem 0;
+  color: #818181;
+}
+.jqjj>text:first-child{
+  margin-top: 0;
+}
+.jqjj{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.footer_box>view:not(:last-child){
+  margin-bottom: 1.2rem;
+}
+.footer_box>image,.footer_box>view{
+  width: 100%;
+}
+.footer_box{
+  box-sizing: border-box;
+  width: 100%;
+  padding: .8rem;
+}
+/* 头部介绍 */
+.jjkb>text{
+  margin: 0;
+}
+.jjkb>view{
+  display: flex;
+  align-items: center;
+}
+.jjkb>view>image{
+  margin-right: .6rem;
+  width: 23px;
+  height: 23px;
+}
+.jjkb{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: .5rem;
+}
+.iwreview{
+  margin-top: -0.5rem;
+}
+.peopler{
+  display: inline-block;
+  transform: scale(.9);
+  font-size: .6rem;
+  color: rgba(255,255,255,0.7);
+  margin-left: -0.1rem;
+}
+.review{
+  display: flex;
+  align-items: center;
+}
+.big_review{
+  margin-right: .5rem;
+  font-size: 2.2rem;
+}
+.star_review{
+  display: flex;
+  flex-direction: column;
+}
+.score{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: .5rem;
+}
+.score>view:first-child{
+  display: flex;
+}
+.pf>text:nth-child(2){
+  display: inline-block;
+  transform: scale(0.7);
+  font-size:.6rem;
+}
+.pf{
+  margin-bottom: .8rem;
+}
+.pf>text:first-child,.f_small{
+  font-size: .7rem;
+}
+
+.dbpf,.jjkb{
+  color: #fff;
+  box-sizing: border-box;
+  padding: .8rem;
+  border-radius: 7px;
+}
+.btns{
+  display: flex;
+  justify-content: space-between;
+}
+.btns>view image{
+  margin-right: .3rem;
+}
+.btns>view{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  padding: .3rem 2.1rem;
+  color: #000;
+  border-radius: 5px;
+  font-size: .9rem;
+}
+.pen{
+  margin-bottom: -0.1rem;
+}
+.heart,.pen{
+  width: 14px;
+  height: 14px;
+}
+.intro_text{
+  color: #fff;
+  margin-left: .7rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.top_intro{
+  display: flex;
+  margin-bottom: .8rem;
+}
+.head_box{
+  padding: .8rem;
+  padding-top: 160rpx;
+}
+.head_box>view{
+  
+  box-sizing: border-box;
+}
+/* 电影图片 */
+.mimg{
+  width:204rpx;
+  height: 284rpx;
+  border-radius: 5px;
+}
+.container{
+  background: #fff;
+  font-size: .9rem;
+}

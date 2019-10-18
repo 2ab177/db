@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "apptg": "/components/apptg/apptg",
+    "van-rate": "vant-weapp/rate"
+  }
+}

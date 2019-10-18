@@ -1,0 +1,293 @@
+<!--pages/index01/index01.wxml-->
+<apptg/>
+<view class="container">
+  <view class="topm">
+    <image class="l" src="cloud://web-test-rr-01-nmzhu.7765-web-test-rr-01-nmzhu/p2153298824.jpg"></image>
+    <image class="m" src="	https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/p2567998580.jpg?sign=f74ffcdd61d14ddc49d35effaf3f060a&t=1570592073"></image>
+    <image class="s" src="	https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/p2567277578.jpg?sign=e8df05ef864a804eebd3c9538d320702&t=1570592339"></image>
+    <view class="wm">
+      <view>今日可播放电影已更新</view>
+      <view>打开App看电影30部 ></view>
+      <text class="kdy"> 看电影</text>
+    </view>
+  </view>
+  <view class="dbrm">
+    <view class="item_title">
+      <text>影院热映</text>
+      <view>
+        <text>用App看更多18 </text>
+        <image src="https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/arrow.png?sign=b60a1b19b43bdc0d9a24120d25457c0c&t=1570757534"></image>
+      </view>
+    </view>
+    <view class="dbrm_list">
+      <view  wx:for="{{rylist}}" wx:key="index" class="dbrm_item">
+        <image src="{{item.images.small}}" bindtap="detail" data-id="{{item.id}}"></image>
+        <view>
+          <text class="movietitle">{{item.title}}</text>
+        </view>
+        <view wx:if="{{item.rating.average}}">
+          <van-rate value="{{item.rating.average/2}}"  size="{{10}}" allow-half gutter="{{0}}" color="#ffac2d" />
+          <text>{{item.rating.average}}</text>
+        </view>
+        <view class="wsy" wx:else>暂无评分</view>
+        <view></view>
+      </view>
+    </view>
+  </view>
+  <view class="dbrm">
+    <view class="item_title">
+      <text>猫眼热门</text>
+      <view>
+        <text>用App看更多500 </text>
+        <image src="https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/arrow.png?sign=b60a1b19b43bdc0d9a24120d25457c0c&t=1570757534"></image>
+      </view>
+    </view>
+    <view class="dbrm_list">
+      <view wx:for="{{rmlist}}" wx:key="index" class="dbrm_item">
+        <image bindtap="detail" data-id="{{item.id}}" src="{{item.images.small}}"></image>
+        <view>
+          <image src="https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/play.png?sign=d46e1558bfd6326ca3c09ce6c43e20e5&t=1570669162"></image>
+          <text  class="movietitle">{{item.title}}</text>
+        </view>
+        <view wx:if="{{item.rating.average}}">
+          <van-rate value="{{ item.rating.average/2 }}"  size="{{10}}" allow-half gutter="{{0}}" color="#ffac2d" />
+          <text>{{item.rating.average}}</text>
+        </view>
+        <view class="wsy" wx:else>暂无评分</view>
+        <view></view>
+      </view>
+    </view>
+  </view>
+  <view class="dbbd">
+    <view class="item_title">
+      <text>猫眼榜单</text>
+      <view>
+        <text>用App看更多500 </text>
+        <image lazy-load="{{true}}" src="https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/arrow.png?sign=b60a1b19b43bdc0d9a24120d25457c0c&t=1570757534"></image>
+      </view>
+    </view>
+    <view class="dbbd_item" style="background:url('{{dbbdlist[0].images.large}}');background-size:cover;background-position: center center;">
+      <view class="zz">
+        <view>WEEK</view>
+      </view>
+      <view>
+        <text>猫眼周榜</text>
+        <text>口碑电影</text>
+      </view>
+      <view>
+        <view bindtap="detail" data-id="{{rylist[0].id}}">1.{{rylist[0].title}}
+          <text>{{rylist[0].rating.average||'暂无评分'}}</text>
+        </view>
+        <view bindtap="detail" data-id="{{rylist[1].id}}">2.{{rylist[1].title}}
+          <text>{{rylist[1].rating.average||'暂无评分'}}</text>
+        </view>
+        <view bindtap="detail" data-id="{{rylist[2].id}}">3.{{rylist[2].title}}
+          <text>{{rylist[2].rating.average||'暂无评分'}}</text>
+        </view>
+      </view>
+      <view>
+        <text>用App打开</text>
+      </view>
+    </view>
+    <view class="dbbd_item" style="background:url('{{dbbdlist[1].images.large}}');background-size:cover;background-position: center center;">
+      <view class="zz">
+      </view>
+      <view>
+      </view>
+      <view>
+        <view bindtap="detail" data-id="{{xylist[0].id}}">1.{{xylist[0].title}}
+          <text>{{xylist[0].rating.average||'暂无评分'}}</text>
+        </view>
+        <view bindtap="detail" data-id="{{xylist[1].id}}">2.{{xylist[1].title}}
+          <text>{{xylist[1].rating.average||'暂无评分'}}</text>
+        </view>
+        <view bindtap="detail" data-id="{{xylist[2].id}}">3.{{xylist[2].title}}
+          <text>{{xylist[2].rating.average||'暂无评分'}}</text>
+        </view>
+      </view>
+      <view>
+        <text>用App打开</text>
+      </view>
+    </view>
+    <view class="dbbd_item" style="background:url('{{dbbdlist[2].images.large}}');background-size:cover;background-position: center center;">
+      <view class="zz">
+        <view>WEEK</view>
+      </view>
+      <view>
+        <text>猫眼周榜</text>
+        <text>热门电影</text>
+      </view>
+      <view>
+        <view bindtap="detail" data-id="{{rylist[3].id}}">1.{{rylist[3].title}}
+          <text>{{rylist[3].rating.average||'暂无评分'}}</text>
+        </view>
+        <view bindtap="detail" data-id="{{rylist[4].id}}">2.{{rylist[4].title}}
+          <text>{{rylist[4].rating.average||'暂无评分'}}</text>
+        </view>
+        <view bindtap="detail" data-id="{{rylist[5].id}}">3.{{rylist[5].title}}
+          <text>{{rylist[5].rating.average||'暂无评分'}}</text>
+        </view>
+      </view>
+      <view>
+        <text>用App打开</text>
+      </view>
+    </view>
+  </view>
+  <view class="dbpd">
+    <view class="item_title">
+      <text>猫眼片单</text>
+      <view>
+        <text>用App看更多500 </text>
+        <image src="https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/arrow.png?sign=b60a1b19b43bdc0d9a24120d25457c0c&t=1570757534"></image>
+      </view>
+    </view>
+    <view class="dbpd_item">
+      <image src="https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/pd1.png?sign=d30fc3417d59fc58b8d3c5312104202f&t=1570700484"></image>
+      <view>
+        <text>《故事》里提到的电影 A-N</text>
+        <text>共256部</text>
+        <view>
+          <image src="https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/user.jpg?sign=b91c79ffaddcb98462f9ead500a83499&t=1570700688"></image>
+          <text>赵新新</text>
+          <text>创建 用App打开</text>
+        </view>
+      </view>
+    </view>
+    <view class="dbpd_item">
+      <image  src="https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/pd3.png?sign=3af4a1469396992a0310d7910b44b8a6&t=1571020662"></image>
+      <view>
+        <text>上海（1905~20___ ）</text>
+        <text>共256部</text>
+        <view>
+          <image src="https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/user4.jpg?sign=2ab298a35f65e3a1df15c3d2b7c9cb15&t=1571020845"></image>
+          <text>千寻亿选</text>
+          <text>创建 用App打开</text>
+        </view>
+      </view>
+    </view>
+    <view class="dbpd_item">
+      <image src="https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/pd2.png?sign=f6a66e6c7143944f6825ad2279c56a13&t=1571020048"></image>
+      <view>
+        <text>批准你进入经典级</text>
+        <text>共180部</text>
+        <view>
+          <image src="https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/user2.jpg?sign=ea30c09fc128a987c19430a079bf365b&t=1571020877"></image>
+          <text>天堂影院</text>
+          <text>创建 用App打开</text>
+        </view>
+      </view>
+    </view>
+    <view class="dbpd_item">
+      <image src="https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/pd4.png?sign=85821cdaa330a919abd1aeded3efe83a&t=1571020122"></image>
+      <view>
+        <text>上海电影译制厂译制电影总目1950-1999</text>
+        <text>共388部</text>
+        <view>
+          <image src="https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/user3.jpg?sign=2f6b2016de84f823fee920a9314000fd&t=1571020908"></image>
+          <text>Phonelx</text>
+          <text>创建 用App打开</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="flll">
+    <view class="item_title">
+      <text>分类浏览</text>
+      <view>
+        <text>用App看更多500 </text>
+        <image lazy-load="{{true}}"  src="https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/arrow.png?sign=b60a1b19b43bdc0d9a24120d25457c0c&t=1570757534"></image>
+      </view>
+    </view>
+    <view class="flll_title">悬疑片
+      <image lazy-load="{{true}}"  src="https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/arrow.png?sign=b60a1b19b43bdc0d9a24120d25457c0c&t=1570757534"></image>
+    </view>
+    <view class="dbrm_list">
+      <view wx:for="{{xylist}}" wx:key="index" class="dbrm_item">
+        <image bindtap="detail" data-id="{{item.id}}" src="{{item.images.small}}"></image>
+        <view>
+          <image lazy-load="{{true}}"  src="https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/play.png?sign=d46e1558bfd6326ca3c09ce6c43e20e5&t=1570669162"></image>
+          <text  class="movietitle">{{item.title}}</text>
+        </view>
+        <view wx:if="{{item.rating.average}}">
+          <van-rate value="{{ item.rating.average/2 }}"  size="{{10}}" allow-half gutter="{{0}}" color="#ffac2d" />
+          <text>{{item.rating.average}}</text>
+        </view>
+        <view class="wsy" wx:else>暂无评分</view>
+        <view></view>
+      </view>
+    </view>
+    <view class="flll_title xjp">喜剧片
+      <image src="https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/arrow.png?sign=b60a1b19b43bdc0d9a24120d25457c0c&t=1570757534"></image>
+    </view>
+    <view class="dbrm_list">
+      <view class="dbrm_item" wx:for="{{xjlist}}" wx:key="index">
+        <image bindtap="detail" data-id="{{item.id}}" src="{{item.images.small}}"></image>
+        <view>
+          <image src="https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/play.png?sign=d46e1558bfd6326ca3c09ce6c43e20e5&t=1570669162"></image>
+          <text  class="movietitle">{{item.title}}</text>
+        </view>
+        <view wx:if="{{item.rating.average}}">
+          <van-rate value="{{ item.rating.average/2 }}"  size="{{10}}" allow-half gutter="{{0}}" color="#ffac2d" />
+          <text>{{item.rating.average}}</text>
+        </view>
+        <view class="wsy" wx:else>暂无评分</view>
+        <view></view>
+      </view>
+    </view>
+  </view>
+  <view class="dbsp">
+    <view class="item_title">
+      <text>猫眼视频</text>
+      <view>
+        <text>用App看更多500 </text>
+        <image src="https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/arrow.png?sign=b60a1b19b43bdc0d9a24120d25457c0c&t=1570757534"></image>
+      </view>
+    </view>
+    <view class="playmovie">
+      <view>
+        <view>
+          <image mode="widthFix" src="https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/wjzdy4.jpg?sign=2812665071fa2dc2b7219b8514cec541&t=1570756346"></image>
+          <image src="https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/play.png?sign=11d580c3e967eb1dae17bedab663d2b3&t=1570710396"></image>
+        </view>
+        <text>片段：呆萌叉叉全新登场(中文字幕)</text>
+        <text>玩具总动员4 用App打开</text>
+      </view>
+      <view>
+        <view>
+          <image mode="widthFix" src="https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/szw.jpg?sign=c7081a5d8075fd1f57c4ba7b259ff8d7&t=1570710234"></image>
+          <image src="https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/play.png?sign=11d580c3e967eb1dae17bedab663d2b3&t=1570710396"></image>
+        </view>
+        <text>迪士尼《狮子王》内地定档7月12日！领先全球王者归来</text>
+        <text>狮子王 用App打开</text>
+      </view>
+    </view>
+  </view>
+  <view class="wntj">
+    <view class="item_title">
+      <text>为你推荐</text>
+    </view>
+    <view class="moviedetail" wx:for="{{wntjlist}}" wx:key="index" >
+      <view>
+        <image lazy-load="{{true}}"  mode="widthFix" src="{{item.images.small}}"  bindtap="detail" data-id="{{item.id}}"></image>
+      </view>
+      <view class="wntj_movie">
+        <view>
+          <view class="wntj_movieitem">
+            <view>{{item.title}}(<text class="gray" >{{item.year}}</text>)</view>
+            <view class="star" wx:if="{{item.rating.average}}">
+              <van-rate  value="{{ item.rating.average/2 }}"  size="{{10}}" allow-half gutter="{{0}}" color="#ffac2d" />
+              <text>{{item.rating.average}}</text>
+            </view>
+            <view class="wsy" wx:else>暂无评分</view>
+            <text class="tdetail">{{item.pubdates[0]}}/{{item.genres[0]}}/{{item.genres[1]}}/{{item.casts[0].name}}/{{item.casts[1].name}}</text>
+          </view>
+          <view class="xk">
+            <image class="heart" src="https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/heart.png?sign=9074d3ac5248e9b3dcb2000978d90b2f&t=1570786669"></image>
+            <text>喜欢</text>
+          </view>
+        </view>
+        <text class="fun">你可能感兴趣</text>
+      </view>
+    </view>
+  </view>
+</view>

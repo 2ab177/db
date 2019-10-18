@@ -1,0 +1,141 @@
+<!-- 详情页主体 -->
+<van-dialog id="van-dialog"/>
+<view class="container">
+  <!-- 头部app推广 -->
+  <apptg></apptg>
+  <view class="head_box" style="background:{{mbg}}">
+    <view class="top_intro">
+      <image class="mimg" src="{{detail.images.large}}"></image>
+      <view class="intro_text">
+        <text class="la_title">{{detail.title}}</text>
+        <text>{{detail.original_title}}({{detail.year}})</text>
+        <text class="sm_title">{{detail.countries[0]}}/{{detail.tags[0]}}/{{detail.tags[1]}}/{{detail.tags[2]}}/{{detail.pubdates[0]}}上映/片长{{detail.durations[0]}}</text>
+        <view class="btns">
+          <view bindtap="addlist">
+            <image class="heart" src="https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/heart.png?sign=9074d3ac5248e9b3dcb2000978d90b2f&t=1570786669"></image>
+            <text>想看</text>
+          </view>
+          <view class="xk_btn">
+            <image class="heart" src="https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/ic_mark_done_s.png?sign=2f882d6ea7f5c9a98f7258706c3d54a2&t=1571042491"></image>
+            <text>看过</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="dbpf" style="background:{{fbg}}">
+      <view class="pf">
+        <text>猫眼评分</text>
+        <text>TM</text>
+      </view>
+      <view class="score">
+        <view class="review">
+          <text class="big_review">{{detail.rating.average}}</text>
+          <view class="star_review">
+            <van-rate value="{{detail.rating.average/2}}" size="{{15}}" allow-half gutter="{{0}}" color="#ffac2d" />
+            <text class="peopler">{{detail.reviews_count}}人评价</text>
+          </view>
+        </view>
+        <view class="iwreview">
+          <image class="pen" src="https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/pen.png?sign=b6a572c19dfd69437fb84967a68e78be&t=1571046263"></image>
+          <text class="f_small">我要评分</text>
+        </view>
+      </view>
+    </view>
+    <view class="jjkb" style="background:{{fbg}}">
+      <view>
+        <image src="https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/play_gray.png?sign=cda12be94c1160f835cddefe38067de6&t=1571052749"></image>
+        <text>即将可播</text>
+      </view>
+      <text class="sm_title">在猫眼App打开上架提醒 ></text>
+    </view>
+  </view>
+  <view class="footer_box">
+    <view class="jqjj">
+      <text>剧情简介</text>
+      <text>{{close?detail.short_sum:detail.summary}}</text>
+      <view style="{{close?'':'display:none'}}" bindtap="open">展开</view>
+    </view>
+    <view class="yzy">
+      <text>演职员</text>
+      <view class="autor">
+        <view wx:for="{{detail.directors}}" wx:key="index" class="autor_item">
+          <image src="{{item.avatars.small}}"></image>
+          <text>{{item.name}}</text>
+          <text>导演</text>
+        </view>
+        <view wx:for="{{detail.casts}}" wx:key="index" class="autor_item">
+          <image src="{{item.avatars.small}}"></image>
+          <text>{{item.name}}</text>
+          <text>演员</text>
+        </view>
+      </view>
+    </view>
+    <view class="jz">
+      <view>
+        <text>预告片/剧照</text>
+        <text>打开App看全部预告片</text>
+      </view>
+      <view bindtap="toplay">
+        <view wx:for="{{detail.trailers}}" wx:key="index" class="ygp" >
+          <image src="{{item.medium}}" mode="aspectFill"></image>
+          <image class="toplay" data-u="{{item.resource_url}}" src="https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/Play.png?sign=9261c1c4332a515d890a953b617aa94e&t=1571208345"></image>
+        </view>
+        <view wx:for="{{detail.photos}}" wx:key="index">
+          <image src="{{item.icon}}" mode="aspectFill"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 短评 -->
+<view class="dpin">
+  <view>
+    <text>短评</text>
+    <view>
+      <image class="pen" src="https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/pen.png?sign=b6a572c19dfd69437fb84967a68e78be&t=1571046263"></image>
+      <text>写短评</text>
+    </view>
+  </view>
+  <view class="short_reviews">
+    <view class="short_reviewsitem" wx:for="{{detail.popular_comments}}" wx:key="index">
+      <image src="{{item.author.avatar}}"></image>
+      <view>
+        <view class="top">
+          <text>{{item.author.name}}</text>
+          <van-rate value="{{item.rating.value}}"  size="{{12}}" allow-half gutter="{{0}}" color="#ffac2d" />
+          <text>{{ltime[index]}}</text>
+        </view>
+        <text class="detail">{{item.content}}</text>
+        <view class="dianzan">
+          <view>
+            <image class="zan" src="https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/good.png?sign=418a8e2144cc75b265729c48ecb7b37c&t=1571132923"></image>
+            <text>{{item.useful_count}}</text>
+          </view>
+          <image class="sdian" src="https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/three_black.png?sign=d29aee8b4c1bb1477b795c381c689a5f&t=1571133003"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 影评 -->
+<view class="ypin">
+  <view>
+    <text>影评</text>
+    <view>
+      <image class="pen" src="https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/pen.png?sign=b6a572c19dfd69437fb84967a68e78be&t=1571046263"></image>
+      <text>写影评</text>
+    </view>
+  </view>
+  <view class="yp_reviews" wx:for="{{detail.popular_reviews}}" wx:key="index">
+    <view>
+      <image src="{{item.author.avatar}}"></image>
+      <view class="top">
+        <text>{{item.author.name}}</text>
+        <van-rate value="{{item.rating.value}}"  size="{{12}}" allow-half gutter="{{0}}" color="#ffac2d" />
+      </view>
+    </view>
+    <text class="title">{{item.title}}</text>
+    <text class="content">{{item.summary}}</text>
+    <text>{{item.id[0]}}回复·{{item.id[1]}}有用</text>
+  </view>
+</view>

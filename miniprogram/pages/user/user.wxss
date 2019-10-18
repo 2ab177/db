@@ -1,0 +1,99 @@
+
+/* 底部 */
+.bottom>view{
+  background: #fff;
+  padding: .5rem 1rem;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.bottom image{
+  width: 12px;
+  height: 12px;
+}
+/* 我的订单 */
+.line{
+  width: 200px;
+  margin: 0 auto;
+  border-top: 1px solid #eee;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%,0);
+  top: 22px;
+  z-index: 1;
+}
+.order_item text{
+  display: block;
+}
+.order_list{
+  display: flex;
+  justify-content: space-around;
+  padding: 1.5rem 0;
+}
+.myorder>text{
+  padding: 0 .5rem;
+  position: relative;
+  background: #fff;
+  z-index: 2;
+}
+.myorder image{
+  width: 45px;
+  height: 45px;
+}
+.myorder{
+  position: relative;
+  margin: .8rem 0;
+  background: #fff;
+  padding: .8rem 0;
+}
+/* 上部 */
+.container>.top{
+  background: #ed2317;
+  text-align: center;
+  color: #fff;
+  padding: .8rem 0;
+}
+/* 中部 */
+.middle>view>text{
+  font-size: .7rem;
+  display: block;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  padding: .4rem 1rem;
+}
+.middle>view>button{
+  font-size: .7rem;
+  display: block;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 5px;
+}
+.middle>view{
+  text-align: center;
+}
+.middle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.middle image{
+  margin-bottom: .2rem;
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+}
+.container>view:nth-child(2){
+  background: url('https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/s0.meituan.png?sign=0277e15c7c307ad79bcaee828bbf7a5a&t=1571300313');
+  background-size: 100%;
+  height: 150px;
+}
+.container>view{
+  width: 100%;
+  text-align: center;
+}
+.container{
+  padding-top: 59px;
+  width: 100%;
+}

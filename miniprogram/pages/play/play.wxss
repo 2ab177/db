@@ -1,0 +1,107 @@
+/* 底部app推广 */
+.bottom_apptg>text{
+  color: #ed2317;
+}
+.bottom_apptg>view>text{
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+.bottom_apptg>view{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.bottom_apptg image{
+  margin-right: .5rem;
+  width: 48px;
+  height: 48px;
+}
+.bottom_apptg{
+  padding: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+/* 更多预告片 */
+.ygp>text{
+  display: block;
+  color: #818181;
+  margin-bottom: .6rem;
+}
+.toplay{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 68rpx !important;
+  height: 68rpx !important;
+}
+.more{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.more_item text{
+  width: 340rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #333;
+  font-size: .9rem;
+}
+.more_item{
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: .2rem;
+}
+.more_item>view{
+  position: relative;
+}
+.more_item image{
+  width: 100%;
+  border-radius: 5px;
+}
+.ygp{
+  width: 100%;
+  padding: .5rem;
+}
+/* 播放 */
+.play>video{
+  width: 100%;
+}
+.play>text{
+  display: block;
+  font-size: 1.5rem;
+  margin: 1rem 0 1rem .5rem;
+}
+.play{
+  margin-bottom: .8rem;
+}
+/* 页面 */
+.container>view{
+  width: 100%;
+  box-sizing: border-box;
+}
+.container{
+  background: #fff;
+  padding-top:60px; 
+}
+/* 电影简介 */
+.moviejj{
+  width: 100%;
+  padding: .5rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+.moviejj text{
+  margin-left: .2rem;
+}
+.moviejj image{
+  margin:0 .2rem;
+  width: 24px;
+  height: 31px;
+}

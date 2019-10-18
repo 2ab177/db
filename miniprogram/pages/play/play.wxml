@@ -1,0 +1,50 @@
+<!--pages/play/play.wxml-->
+<!-- 头部app推广 -->
+<apptg/>
+<view class="container">
+  <!-- 电影简介 -->
+  <view class="moviejj">
+    <image src="{{movielist.images.small}}"></image>
+    <text>{{movielist.title}}</text>
+    <van-rate value="{{ movielist.rating.average/2 }}" size="{{15}}" allow-half gutter="{{0}}" color="#ffac2d" />
+    <text>{{movielist.rating.average}}</text>
+  </view>
+  <!-- 播放 -->
+  <view class="play" style="{{fixed?vhei:''}}">
+    <text>{{movielist.title}}</text>
+    <video style="{{fixed?'position:fixed;top:60px;left:0;z-index:999':''}}" id="vid" src="{{u}}" controls="{{true}}" autoplay="{{true}}"></video>
+  </view>
+  <!-- 更多预告片 -->
+  <view class="ygp" bindtap="toplay">
+    <text>更多预告片({{movielist.trailers.length}})</text>
+    <view class="more">
+      <view class="more_item" wx:for="{{movielist.trailers}}" wx:key="index">
+        <view>
+          <image mode="widthFix" src="{{item.medium}}"></image>
+          <image class="toplay" data-u="{{item.resource_url}}" src="https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/Play.png?sign=9261c1c4332a515d890a953b617aa94e&t=1571208345"></image>
+        </view>
+        <text>{{item.title}}</text>
+      </view>
+    </view>
+  </view>
+  <!-- 花絮 -->
+  <view class="ygp" bindtap="toplay">
+     <text>花絮({{movielist.bloopers.length}})</text>
+    <view class="more">
+      <view class="more_item" wx:for="{{movielist.bloopers}}" wx:key="index">
+        <view>
+          <image mode="widthFix" src="{{item.medium}}"></image>
+          <image class="toplay" data-u="{{item.resource_url}}" src="https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/Play.png?sign=9261c1c4332a515d890a953b617aa94e&t=1571208345"></image>
+        </view>
+        <text>{{item.title}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="bottom_apptg">
+    <view>
+      <image src="https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/logo.png?sign=59c49902bfd848bc8866200467f82798&t=1571280471"></image>
+      <text>猫眼</text>
+    </view>
+    <text>去{{sys}}免费下载{{sys=="App Store"?'iOS':'Android'}}客户端</text>
+  </view>
+</view>

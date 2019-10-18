@@ -1,0 +1,42 @@
+/* 豆瓣app推广 */
+.dbapp_tg>view:last-child>text{
+  margin: 0;
+  padding: .3rem 1rem;
+  font-size: .6rem;
+  background: #ed2317;
+  color: #fff;
+  border-radius: 14px;
+}
+.dbapp_tg>view{
+  display: flex;
+}
+.dbapp_tg>view>view>text:first-child{
+  font-weight: bold;
+}
+.dbapp_tg>view>view>text:nth-child(2){
+  font-size: .6rem;
+  color: #818181;
+}
+.dbapp_tg>view>view{
+  margin-left: .6rem;
+  display: flex;
+  flex-direction: column;
+}
+.dbapp_tg>view>image{
+  width: 39px;
+  height: 39px
+}
+.dbapp_tg{
+  box-sizing: border-box;
+  align-items: center;
+  padding: .6rem .7rem;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background: #fff;
+}

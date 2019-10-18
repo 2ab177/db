@@ -1,0 +1,414 @@
+/* pages/index01/index01.wxss */
+
+/* 电影标题 */
+.movietitle{
+  width: 200rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.wsy{
+  
+  font-size: .6rem;
+  color: #818181;
+}
+/* 为你推荐 */
+.gray{
+  color: #818181;
+}
+.fun{
+  display: block;
+  margin-top: .8rem;
+  background: #f7f7f7;
+  margin-left: .7rem;
+  padding: .5rem;
+  font-size: .9rem;
+  color: #818181;
+}
+.tdetail{
+  margin-bottom: .6rem;
+  overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+    word-wrap: break-word;
+    -webkit-line-clamp: 2;
+}
+.star{
+  margin: .1rem 0 .8rem 0;
+  font-size: .7rem;
+color: #818181;
+
+}
+.wntj_movieitem>text:first-child{
+  font-size: 1.1rem;
+  margin-bottom: 3px;
+}
+.wntj_movieitem{
+  flex: 1;
+  margin-left: .7rem;
+}
+.xk{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  border-left: 1px dotted #999;
+  color: #ffac2d;
+}
+.wntj_movie>view:first-child{
+  display: flex;
+}
+.heart{
+  width: 17px;
+  height: 13px;
+  margin-bottom: 5px;
+}
+.wntj_movie{
+  flex: 1;
+}
+.wntj{  
+  font-size: 1rem;
+}
+.wntj>view>view>image{
+  width:174rpx;
+  height: 244rpx;
+  border-radius: 5px;
+}
+.autor{
+  width: 400rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  /* 5为显示的行数 */
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+}
+.moviedetail{
+  display: flex;
+  padding: 1rem 0;
+  border-bottom: 1px solid #eee;
+}
+/* 豆瓣视频 */
+.playmovie>view>view>image:nth-child(2){
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 28px;
+  height: 28px;
+}
+.playmovie>view>view>image:first-child{
+  width: 100%;
+  border-radius: 5px;
+}
+.playmovie>view>view{
+  position: relative;
+}
+.playmovie>view>text:nth-child(3){
+  margin-top: .2rem;
+  color: #818181;
+  font-size: .7rem;
+}
+.playmovie>view>text:nth-child(2){
+  font-size: .8rem;
+}
+.playmovie>view:nth-child(2){
+  margin-left: .3rem;
+}
+.playmovie>view:first-child{
+  margin-right: .3rem;
+}
+.playmovie>view{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.playmovie{
+  display: flex;
+  width: 100%;
+}
+.dbsp>.item_title{
+  margin-bottom: 1rem;
+}
+/* 分类浏览 */
+.xjp+.dbrm_item{
+  margin: 0;
+}
+.flll_title>image{
+  width: 12px;
+  height: 12px;
+}
+.flll_title{
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+.xjp{
+  margin-top:0;
+}
+/* 豆瓣片单 */
+.dbpd_item>view>text:nth-child(2){
+  font-size: .7rem;
+  color: #818181;
+  margin-top: .5rem;
+  margin-bottom: .8rem;
+}
+.dbpd_item>view{
+  display: flex;
+  flex-direction: column;
+}
+.dbpd_item>view>view{
+  display: flex;
+  align-items: center;
+}
+.dbpd_item>view>view>text:nth-child(3){
+  font-size: .8rem;
+  color: #bfbfbf;
+}
+.dbpd_item>view>view>text:nth-child(2){
+  margin-right: 5px;
+  font-size: .8rem;
+  color: #818181;
+}
+.dbpd_item>view>view>image{
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin-right: 7px;
+}
+.dbpd_item>image{
+  margin-right: .8rem;
+  width: 80px;
+  height: 80px;
+}
+.dbpd_item+.dbpd_item{
+  border-top: 1px solid #eee;
+}
+.dbpd_item{
+  padding: .8rem 0;
+  display: flex;
+}
+/* T250 */
+.dbbd_item:nth-child(3)>.zz{
+  background: rgba(50, 50, 59, .8);
+}
+.dbbd_item:nth-child(3)>view:nth-child(2){
+  background:url('https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/t250.png?sign=662264dd92b13ef09a2e965fd54a6ad0&t=1570694123') #32323b no-repeat;
+  background-size: 100%;
+}
+/* 豆瓣热门 */
+.dbbd_item>view:last-child>text{
+  border: 1px solid rgb(181, 182, 181);
+  color: rgb(181, 182, 181);
+  border-radius: 8px;
+  padding: 2px 5px;
+  font-size: .7rem;
+  margin-right: .5rem;
+}
+.dbbd_item>view:nth-child(3)>view>text{
+  color: #ffac2d;
+}
+.dbbd_item>view:nth-child(3)>view{
+  width: 300rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.dbbd_item>view:nth-child(3){
+  flex: 1;
+  line-height: 1.5rem;
+  overflow: hidden;
+}
+.dbbd_item>view:nth-child(2)>text:nth-child(2){
+  font-size: 1.1rem;
+  color: #fff;
+  font-weight: bold;
+}
+.dbbd_item>view:nth-child(2){
+  color: rgb(181, 182, 181);
+  background: rgba(0, 0, 0, .8);
+  width: 108px;
+  height: 108px;
+}
+.dbbd_item>view:not(:first-child){
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.dbbd_item>.zz>view{
+  margin: 1.5rem 0 0 .7rem;
+  font-size: 1.8rem;
+  color: #fff;
+  font-weight: 700;
+}
+.dbbd_item>.zz{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 108px;
+  background: rgba(0, 0, 0, .6);
+}
+.dbbd_item{
+  display: flex;
+  width: 100%;
+  border-radius: 5px;
+  height: 108px;
+  position: relative;
+  color: #fff;
+  overflow: hidden;
+  margin-top: .8rem;
+}
+.container>view:not(:first-child){
+  margin-bottom: 2.8rem !important;
+}
+.container>view:nth-child(2){
+  margin-bottom:.5rem !important;
+}
+
+/* 即将上映&豆瓣热门 */
+.dbrm_item>view:nth-child(2)>text{
+  font-size: .8rem;
+  font-weight: bold;
+}
+.dbrm_item>view:nth-child(3)>text{
+  margin-left: 4px;
+  font-size: .7rem;
+  color: #818181;
+}
+.dbrm_item>view:nth-child(2){
+  display: flex;
+  align-items: center;
+}
+.dbrm_item>view:nth-child(2)>image{
+  width: 14px;
+  height: 14px;
+  margin-right: 3px;
+}
+.jjsy_item>view:last-child,.dbrm_item>view:last-child{
+  width: 26px;
+  height: 26px;
+  background:url('https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/sc.png?sign=3633467f4369c89a3445a787e2502d9c&t=1570613616') rgba(0, 0, 0, .5) no-repeat;
+  background-size: 20px 20px;
+  background-position: center center;
+  border-radius: 5px 0 3px 0;
+  position: absolute;
+  left: 5px; 
+  top:0px;
+  z-index: 1;
+}
+.jjsy_item>view:nth-child(4)>text{
+  color: #ff4055;
+  display: inline-block;
+  border: 1px solid #ff4055;
+  font-size: .7rem;
+  padding: 0 .2rem;
+  border-radius: 5px;
+}
+.jjsy_item>text:nth-child(3){
+  color: #818181;
+  font-size: .6rem;
+}
+.jjsy_item>text:nth-child(2),.dbrm_item>text:nth-child(2){
+  margin-top: .3rem;
+  font-weight: bold;
+}
+.jjsy_list,.dbrm_list{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: .8rem;
+}
+.jjsy_item>image,.dbrm_item>image{
+  margin: 0 auto;
+  width: 222rpx;
+  height: 316rpx;
+  border-radius: 5px;
+}
+.jjsy_item,.dbrm_item{
+  position: relative;
+  border-radius: 2px;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 33.33%;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2rem;
+  margin-bottom: .5rem;
+}
+.jjsy,.dbrm,.dbbd{
+  margin: 1.1rem 0 1.3rem 0;
+}
+/* 标题 */
+.item_title>text:first-child{
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.item_title>view>image{
+  width: 12px;
+  height: 12px;
+}
+.item_title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* 页面容器  */
+.container{
+  padding: 0 .5rem;
+  background: #fff;
+    font-size: .9rem;
+}
+/* 顶部电影介绍 */
+.kdy{
+  width: 46px;
+  background: url('https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/download.png?sign=ace90f39450c04ea80ef1dfbbd5cffbc&t=1570601042') no-repeat;
+  text-align: right;
+  padding-left: 16px;
+  background-size: 12px 12px;
+  background-position: left center;
+  display: block;
+  margin-top: 16px;
+  margin-right: 8px;
+  float: right;
+}
+.topm{
+  background: rgb(127, 3, 8);
+  border-radius: 5px;
+  height: 108px;
+  position: relative;
+  color: #fff;
+  margin-top: 175rpx;
+}
+.l,.m,.s{
+  position: absolute;
+  bottom: 17px;
+  border-radius: 4px;
+}
+.l{
+  left: 17px;
+  width: 154rpx;
+  height: 216rpx;
+  z-index: 3;
+}
+.m{
+  left: 51px;
+  width: 140rpx;
+  height: 196rpx;
+  z-index: 2;
+}
+.s{
+  left: 85px;
+  width: 126rpx;
+  height: 176rpx;
+  z-index: 1;
+}
+.wm{
+  padding-top: 30px;
+  padding-left: 55%;
+}
+/* 容器设置 */
+.container>view{
+  width: 100%;
+}
