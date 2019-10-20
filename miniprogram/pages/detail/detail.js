@@ -1,5 +1,7 @@
 // pages/detail/detail.js
-import Dialog from "vant-weapp/dialog/dialog"
+const db=wx.cloud.database();
+import Dialog from 'vant-weapp/dialog/dialog';
+import addlist from '../../addlist.js';
 Page({
 
   /**
@@ -10,45 +12,10 @@ Page({
     mbg:"",
     fbg:"",
     close:true,
-    ltime:[]
+    ltime:[],
   },
   addlist(){
-    var actor = this.detail.casts.map((elem)=>{
-      return elem.name
-    })
-    actor = actor.join();
-    if (wx.getStorageSync('uname')){
-      db.collection('mymovie')
-        .doc(wx.getStorageSync('uname'))
-        .get()
-        .then(res => {
-          db.collection('mymovie')
-            .doc(wx.getStorageSync('uname'))
-            .update({
-              movielist:res.data.movielist.concat({
-                img: this.detail.images.small,
-                title: this.detail.title,
-                rating: this.detail.average,
-                actor
-              })
-            })
-            .then(res =>
-              console.log(1)
-            )
-            .catch(e => {console.log(e) })
-        })
-        .catch(res => {})
-    }else{
-      Dialog.alert({
-        title: '未登录',
-        message: '请先登录'
-      }).then(() => {
-        console.log(1);
-        wx.switchTab({
-          url: '/pages/user/user',
-        })
-      });
-    }
+    addlist(this.data.detail);
   },
   toplay(e){
     //事件委托
@@ -60,7 +27,7 @@ Page({
   },
   changecolor(){
     //随机选择不同的背景颜色
-    var n=Math.floor(Math.random()*6);
+    let n=Math.floor(Math.random()*6);
     switch (n){
       case 0:
         this.setData({
@@ -108,9 +75,10 @@ Page({
   },
   loadDetail(options) {
     wx.showLoading({
-      title: '正在加载中...',
+      title: '加载中...',
+      mask:true
     })
-    var id = parseInt(options.id);
+    let id = parseInt(options.id);
     //调用云函数请求数据
     wx.cloud.callFunction({
       name: "findDetail1905",
@@ -119,12 +87,12 @@ Page({
       }
     })
       .then(res => {
-        var result = JSON.parse(res.result);
+        let result = JSON.parse(res.result);
         result.rating.average = result.rating.average.toFixed(1);
-        var nt=new Date().getTime();
+        let nt=new Date().getTime();
         //对时间格式进行加工
         result.popular_comments.forEach((elem)=>{
-          var time=elem.created_at.split(' ')[0];
+          let time=elem.created_at.split(' ')[0];
           time = new Date(time).getTime();
           time = Math.floor((nt - time) / 86400000);
           if(Math.floor(time/365)>=1){
@@ -142,12 +110,13 @@ Page({
           }
         })
         result.popular_reviews.forEach((elem)=>{
-          var arr = [];
+          let arr = [];
           arr.push(elem.id.slice(0,4));
           arr.push(elem.id.slice(4));
           elem.id=arr;
         })
         result.short_sum = result.summary.slice(0, 68)+'......';
+        this.detail = result;
         this.setData({
           detail: result,
           ltime:this.data.ltime
@@ -155,7 +124,13 @@ Page({
         wx.hideLoading();
       })
       .catch(err => {
+        wx.hideLoading();
         console.log(err);
+        Dialog.alert({
+          title: '错误',
+          message: '发生了未知错误'
+        }).then(() => {
+        });
       })
   },
   /**

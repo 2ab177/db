@@ -48,6 +48,17 @@ color: #818181;
   flex: 1;
   margin-left: .7rem;
 }
+.xk text{
+  position: relative;
+  z-index: 0;
+}
+.xk view{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
 .xk{
   display: flex;
   flex-direction: column;
@@ -56,11 +67,14 @@ color: #818181;
   width: 25%;
   border-left: 1px dotted #999;
   color: #ffac2d;
+  position: relative;
 }
 .wntj_movie>view:first-child{
   display: flex;
 }
 .heart{
+  position: relative;
+  z-index: 0;
   width: 17px;
   height: 13px;
   margin-bottom: 5px;
@@ -359,6 +373,7 @@ color: #818181;
   padding: 0 .5rem;
   background: #fff;
     font-size: .9rem;
+    overflow: hidden;
 }
 /* 顶部电影介绍 */
 .kdy{

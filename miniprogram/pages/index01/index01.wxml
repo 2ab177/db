@@ -1,6 +1,8 @@
 <!--pages/index01/index01.wxml-->
 <apptg/>
-<view class="container">
+<van-toast id="van-toast" />
+<van-dialog id="van-dialog"/>
+<view class="container" bindtap="addMyM">
   <view class="topm">
     <image class="l" src="cloud://web-test-rr-01-nmzhu.7765-web-test-rr-01-nmzhu/p2153298824.jpg"></image>
     <image class="m" src="	https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/p2567998580.jpg?sign=f74ffcdd61d14ddc49d35effaf3f060a&t=1570592073"></image>
@@ -21,7 +23,7 @@
     </view>
     <view class="dbrm_list">
       <view  wx:for="{{rylist}}" wx:key="index" class="dbrm_item">
-        <image src="{{item.images.small}}" bindtap="detail" data-id="{{item.id}}"></image>
+        <image src="{{item.images.small}}"  data-iid="{{item.id}}"></image>
         <view>
           <text class="movietitle">{{item.title}}</text>
         </view>
@@ -44,7 +46,7 @@
     </view>
     <view class="dbrm_list">
       <view wx:for="{{rmlist}}" wx:key="index" class="dbrm_item">
-        <image bindtap="detail" data-id="{{item.id}}" src="{{item.images.small}}"></image>
+        <image  data-iid="{{item.id}}" src="{{item.images.small}}"></image>
         <view>
           <image src="https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/play.png?sign=d46e1558bfd6326ca3c09ce6c43e20e5&t=1570669162"></image>
           <text  class="movietitle">{{item.title}}</text>
@@ -75,13 +77,13 @@
         <text>口碑电影</text>
       </view>
       <view>
-        <view bindtap="detail" data-id="{{rylist[0].id}}">1.{{rylist[0].title}}
+        <view  data-iid="{{rylist[0].id}}">1.{{rylist[0].title}}
           <text>{{rylist[0].rating.average||'暂无评分'}}</text>
         </view>
-        <view bindtap="detail" data-id="{{rylist[1].id}}">2.{{rylist[1].title}}
+        <view  data-iid="{{rylist[1].id}}">2.{{rylist[1].title}}
           <text>{{rylist[1].rating.average||'暂无评分'}}</text>
         </view>
-        <view bindtap="detail" data-id="{{rylist[2].id}}">3.{{rylist[2].title}}
+        <view  data-iid="{{rylist[2].id}}">3.{{rylist[2].title}}
           <text>{{rylist[2].rating.average||'暂无评分'}}</text>
         </view>
       </view>
@@ -95,13 +97,13 @@
       <view>
       </view>
       <view>
-        <view bindtap="detail" data-id="{{xylist[0].id}}">1.{{xylist[0].title}}
+        <view data-iid="{{xylist[0].id}}">1.{{xylist[0].title}}
           <text>{{xylist[0].rating.average||'暂无评分'}}</text>
         </view>
-        <view bindtap="detail" data-id="{{xylist[1].id}}">2.{{xylist[1].title}}
+        <view data-iid="{{xylist[1].id}}">2.{{xylist[1].title}}
           <text>{{xylist[1].rating.average||'暂无评分'}}</text>
         </view>
-        <view bindtap="detail" data-id="{{xylist[2].id}}">3.{{xylist[2].title}}
+        <view data-iid="{{xylist[2].id}}">3.{{xylist[2].title}}
           <text>{{xylist[2].rating.average||'暂无评分'}}</text>
         </view>
       </view>
@@ -118,13 +120,13 @@
         <text>热门电影</text>
       </view>
       <view>
-        <view bindtap="detail" data-id="{{rylist[3].id}}">1.{{rylist[3].title}}
+        <view  data-iid="{{rylist[3].id}}">1.{{rylist[3].title}}
           <text>{{rylist[3].rating.average||'暂无评分'}}</text>
         </view>
-        <view bindtap="detail" data-id="{{rylist[4].id}}">2.{{rylist[4].title}}
+        <view  data-iid="{{rylist[4].id}}">2.{{rylist[4].title}}
           <text>{{rylist[4].rating.average||'暂无评分'}}</text>
         </view>
-        <view bindtap="detail" data-id="{{rylist[5].id}}">3.{{rylist[5].title}}
+        <view  data-iid="{{rylist[5].id}}">3.{{rylist[5].title}}
           <text>{{rylist[5].rating.average||'暂无评分'}}</text>
         </view>
       </view>
@@ -203,7 +205,7 @@
     </view>
     <view class="dbrm_list">
       <view wx:for="{{xylist}}" wx:key="index" class="dbrm_item">
-        <image bindtap="detail" data-id="{{item.id}}" src="{{item.images.small}}"></image>
+        <image data-iid="{{item.id}}" src="{{item.images.small}}"></image>
         <view>
           <image lazy-load="{{true}}"  src="https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/play.png?sign=d46e1558bfd6326ca3c09ce6c43e20e5&t=1570669162"></image>
           <text  class="movietitle">{{item.title}}</text>
@@ -221,7 +223,7 @@
     </view>
     <view class="dbrm_list">
       <view class="dbrm_item" wx:for="{{xjlist}}" wx:key="index">
-        <image bindtap="detail" data-id="{{item.id}}" src="{{item.images.small}}"></image>
+        <image data-iid="{{item.id}}" src="{{item.images.small}}"></image>
         <view>
           <image src="https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/play.png?sign=d46e1558bfd6326ca3c09ce6c43e20e5&t=1570669162"></image>
           <text  class="movietitle">{{item.title}}</text>
@@ -262,15 +264,16 @@
       </view>
     </view>
   </view>
+  <!-- 事件委托 -->
   <view class="wntj">
     <view class="item_title">
       <text>为你推荐</text>
     </view>
     <view class="moviedetail" wx:for="{{wntjlist}}" wx:key="index" >
       <view>
-        <image lazy-load="{{true}}"  mode="widthFix" src="{{item.images.small}}"  bindtap="detail" data-id="{{item.id}}"></image>
+        <image lazy-load="{{true}}"  mode="widthFix" src="{{item.images.small}}"  data-iid="{{item.id}}"></image>
       </view>
-      <view class="wntj_movie">
+      <view class="wntj_movie" >
         <view>
           <view class="wntj_movieitem">
             <view>{{item.title}}(<text class="gray" >{{item.year}}</text>)</view>
@@ -281,9 +284,10 @@
             <view class="wsy" wx:else>暂无评分</view>
             <text class="tdetail">{{item.pubdates[0]}}/{{item.genres[0]}}/{{item.genres[1]}}/{{item.casts[0].name}}/{{item.casts[1].name}}</text>
           </view>
-          <view class="xk">
+          <view class="xk" >
             <image class="heart" src="https://7765-web-test-rr-01-nmzhu-1300217662.tcb.qcloud.la/heart.png?sign=9074d3ac5248e9b3dcb2000978d90b2f&t=1570786669"></image>
             <text>喜欢</text>
+            <view data-id="{{item.id}}"></view>
           </view>
         </view>
         <text class="fun">你可能感兴趣</text>

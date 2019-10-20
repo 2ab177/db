@@ -1,5 +1,6 @@
 <!-- 详情页主体 -->
 <van-dialog id="van-dialog"/>
+<van-toast id="van-toast" />
 <view class="container">
   <!-- 头部app推广 -->
   <apptg></apptg>

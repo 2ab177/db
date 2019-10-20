@@ -12,52 +12,37 @@ Page({
   },
 
   loginout() {
-    Dialog.confirm({
-      title: '注销',
-      message: '确定要退出吗'
-    }).then(() => {
-      wx.clearStorage();
-      this.setData({
-        logined: false,
-        userData: {}
-      })
-    }).catch(() => {
-      // on cancel
-    });
-
+    if (wx.getStorageSync('signature')){
+      Dialog.confirm({
+        title: '注销',
+        message: '确定要退出吗'
+      }).then(() => {
+        wx.clearStorage();
+        this.setData({
+          logined: false,
+          userData: {}
+        })
+      }).catch(() => {
+        // on cancel
+      });
+    }
   },
   getUser(res) {
     if (res.detail) {
-      var userData = JSON.parse(res.detail.rawData);
+      let signature=res.detail.signature;
+      let userData = JSON.parse(res.detail.rawData);
       wx.setStorage({
         key: 'userData',
         data: userData
       })
       wx.setStorage({
-        key: 'uname',
-        data: userData.nickName
+        key: 'signature',
+        data: signature
       })
       this.setData({
         userData,
         logined: true
       })
-      db.collection('mymovie')
-        .doc(userData.nickName)
-        .get()
-        .then(res => {
-          console.log("succ");
-        })
-        .catch(res => {
-          db.collection('mymovie')
-            .doc(userData.nickName)
-            .set({
-              data: {
-                movielist: []
-              }
-            })
-            .then(res => console.log(res))
-            .catch(res => console.log(res))
-        })
     }
   },
   /**
@@ -65,7 +50,7 @@ Page({
    */
   onLoad: function(options) {
     this.setData({
-      logined: wx.getStorageSync('uname') ? true : false,
+      logined: wx.getStorageSync('signature') ? true : false,
       userData: wx.getStorageSync('userData') ? wx.getStorageSync('userData') : {}
     });
   },

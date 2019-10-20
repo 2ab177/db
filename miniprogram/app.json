@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/index01/index01",
     "pages/wantw/wantw",
     "pages/user/user",
-    "pages/index01/index01",
     "pages/detail/detail",
     "pages/play/play"
   ],
@@ -39,6 +39,9 @@
     ]
   },
   "usingComponents": {
-    "apptg": "components/apptg/apptg"
+    "apptg": "components/apptg/apptg",
+    "van-rate": "vant-weapp/rate",
+    "van-dialog": "vant-weapp/dialog",
+    "van-toast": "vant-weapp/toast"
   }
 }

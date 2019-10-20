@@ -48,7 +48,6 @@ Page({
       this.setData({
         vhei:'padding-bottom:'+res[0].height +'px'
       });
-      console.log(this.vhei);
     })
   },
   toplay(e) {
@@ -61,7 +60,7 @@ Page({
   },
   loadMovie(options) {
     wx.showLoading({
-      title: '正在加载中...',
+      title: '加载中...',
     })
     //调用云函数请求数据
     var id = parseInt(options.id);
@@ -73,6 +72,15 @@ Page({
       })
       .then(res => {
         var result = JSON.parse(res.result);
+        if (options.u) {
+          this.setData({
+            u: options.u
+          })
+        } else {
+          this.setData({
+            u: result.trailers[0].resource_url
+          })
+        }
         this.setData({
           movielist: result
         })
@@ -84,9 +92,6 @@ Page({
    */
   onLoad: function(options) {
     this.loadMovie(options);
-    this.setData({
-      u: options.u
-    })
     this.getsys();
     this.queryMultipleNodes();
   },

@@ -1,19 +1,34 @@
-
+/* 主演 */
+.actor{
+  width: 350rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 /* 我喜欢的电影列表 */
+
+.mymovie_list+.mymovie_list{
+  border-top: 1px solid #eee;
+}
 .mymovie_item{
   display: flex;
   padding: .8rem;
 }
 .mymovie_item>view:last-child{
   display: flex;
+  justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+.mymovie_item>view:last-child>text:first-child{
+  margin-bottom: .5rem;
 }
 .mymovie_item>view:last-child>text{
-  padding: .4rem .8rem;
+  padding: .3rem .8rem;
+  width: 76%;
   background: #ed2317;
   color: #fff;
   border-radius: 5px;
-  
 }
 .mymovie_item>view:nth-child(2)>text:first-child{
   font-size: 1rem;
@@ -76,6 +91,7 @@
   text-align: center;
   color: #fff;
   padding: .8rem 0;
+  clear: both;
 }
 /* 容器 */
 .container>view{
@@ -87,4 +103,5 @@
   width: 100%;
   background: #fff;
   color: #818181;
+  overflow: hidden;
 }

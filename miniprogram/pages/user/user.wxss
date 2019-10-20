@@ -96,4 +96,5 @@
 .container{
   padding-top: 59px;
   width: 100%;
+  overflow: hidden;
 }

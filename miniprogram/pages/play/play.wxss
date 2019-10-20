@@ -88,6 +88,7 @@
 .container{
   background: #fff;
   padding-top:60px; 
+  overflow: hidden;
 }
 /* 电影简介 */
 .moviejj{

@@ -341,4 +341,5 @@
 .container{
   background: #fff;
   font-size: .9rem;
+  overflow: hidden;
 }

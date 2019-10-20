@@ -42,7 +42,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 1,
 			"list": [
 				{
 					"id": -1,
@@ -51,10 +51,10 @@
 					"query": ""
 				},
 				{
-					"id": 2,
+					"id": 1,
 					"name": "play",
 					"pathName": "pages/play/play",
-					"query": "u=http://vt1.doubanio.com/201910160906/6fa6f478ba626180d627b898d7abb5c1/view/movie/M/302520072.mp4&id= 25779217",
+					"query": "id= 25779217",
 					"scene": null
 				}
 			]

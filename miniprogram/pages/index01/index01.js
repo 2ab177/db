@@ -1,11 +1,11 @@
 // pages/index01/index01.js
+import addlist from '../../addlist.js';
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    // fixed:false,
     start:21,
     rylist:[],
     rmlist:[],
@@ -14,10 +14,26 @@ Page({
     wntjlist:[],
     dbbdlist:[]
   },
-  detail(e) {
-    wx.navigateTo({
-      url: '/pages/detail/detail?id=' + e.target.dataset.id
-    });
+  addMyM(e){
+    //事件委托
+    if (e.target.dataset.id){
+      //调用云函数请求数据
+      wx.cloud.callFunction({
+        name: "findDetail1905",
+        data: {
+          id: parseInt(e.target.dataset.id)
+        }
+      })
+      .then(res=>{
+        let result = JSON.parse(res.result);
+        addlist(result);
+      })
+      .catch(e=>console.log(e))
+    } else if (e.target.dataset.iid){
+      wx.navigateTo({
+        url: '/pages/detail/detail?id=' + e.target.dataset.iid
+      });
+    }
   },
   onChange(event) {
     this.setData({
@@ -26,7 +42,8 @@ Page({
   },
   loadwntj(){
     wx.showLoading({
-      title: '正在加载中...',
+      title: '加载中...',
+      maskL:true
     })
     wx.cloud.callFunction({
       name: "movielist1905",
@@ -44,7 +61,7 @@ Page({
   },
   loadMore(start,list,count) {
     wx.showLoading({
-      title: '正在加载中...',
+      title: '加载中...',
     })
     wx.cloud.callFunction({
       name: "movielist1905",
