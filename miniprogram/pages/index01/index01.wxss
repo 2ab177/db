@@ -2,7 +2,7 @@
 
 /* 电影标题 */
 .movietitle{
-  width: 200rpx;
+  width: 180rpx;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -331,12 +331,12 @@ color: #818181;
 }
 .jjsy_list,.dbrm_list{
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
   margin-top: .8rem;
 }
 .jjsy_item>image,.dbrm_item>image{
-  margin: 0 auto;
-  width: 222rpx;
+  width: 228rpx;
   height: 316rpx;
   border-radius: 5px;
 }
@@ -345,7 +345,6 @@ color: #818181;
   border-radius: 2px;
   overflow: hidden;
   box-sizing: border-box;
-  width: 33.33%;
   display: flex;
   flex-direction: column;
   line-height: 1.2rem;
